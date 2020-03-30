@@ -2,7 +2,7 @@
   "name": "regional-covid",
   "version": "1.0.0",
   "description": "An api that focuses on providing local or regional COVID-19 data based on data from https://bing.com/covid",
-  "main": "app.js",
+  "main": "index.js",
   "dependencies": {
     "express": "^4.17.1",
     "puppeteer": "^2.1.1",
