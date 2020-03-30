@@ -10,7 +10,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "forever app.js"
+    "start": "node index.js"
   },
   "author": "Clarence Love",
   "license": "MIT"
