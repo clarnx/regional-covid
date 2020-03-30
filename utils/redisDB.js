@@ -41,10 +41,10 @@ function serveCachedData(req, res, next) {
 
       const requestCountry = req.params.country;
 
-      if (currentCountryInCache === requestCountry) {
+      if (currentCountryInCache.replace(/\s+/g, "") === requestCountry) {
         res.json(JSON.parse(reply));
       } else {
-        res.redirect(`/covid/${currentCountryInCache}`);
+        res.redirect(`/covid/${currentCountryInCache.replace(/\s+/g, "")}`);
       }
     } else {
       next();
