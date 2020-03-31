@@ -29,6 +29,13 @@ const HTTP_SERVER_PORT = process.env.HTTP_SERVER_PORT || 5000;
 
 const app = express();
 
+const homeResponse = `<h2>Regional Covid is a custom API that focuses on providing local or regional COVID-19 data based on data from <a href='https://bing.com/covid' target='_blank'>https://bing.com/covid</a>.</h2>
+<p>Get the API data for your region by adding <i>/covid/[your_country]</i> at the end of the URL of this current page. <br> Note that <i>[your_country]</i> is the full name of your country without any spaces. Also typing any other country which is not your default country will redirect to the default country.</p>`;
+
+app.get("/", (req, res) => res.send(homeResponse));
+
+app.get("/covid/", (req, res) => res.redirect("/"));
+
 app.get("/covid/:country", redisDB.serveCachedData, init);
 
 app.listen(HTTP_SERVER_PORT, () => {

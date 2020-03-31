@@ -16,7 +16,7 @@ async function fetchCovid19Data(country, response) {
 
   return (async () => {
     const countryInputSearchValue = country;
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({headless: false});
     const page = await browser.newPage();
     await page.goto("https://bing.com/covid");
 

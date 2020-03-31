@@ -4,7 +4,7 @@ const REDIS_DB_PORT = process.env.REDIS_DB_PORT;
 const REDIS_DB_ENDPOINT = process.env.REDIS_DB_ENDPOINT;
 const REDIS_DB_PASSWORD = process.env.REDIS_DB_PASSWORD;
 
-const COVID_DATA_DB_KEYNAME = process.env.COVID_DATA_DB_KEYNAME || "covid19Data";
+const COVID_DATA_DB_KEYNAME = process.env.COVID_DATA_DB_KEYNAME || "covid19_data";
 
 const client = redis.createClient({
   port: REDIS_DB_PORT, // replace with your port
