@@ -3,7 +3,7 @@ Regional Covid is a custom API that focuses on providing local or regional COVID
 
 # How The API Works
 
-Once the default country is set, **Total Global** data, **Regional** OR **Local** data is scraped from https://bing.com/covid by Puppeteer and then saved to the Redis Database which is an in-memory data structure store, used as a database, cache and message broker. Redis is wicked fast hence the choice for database for this project.
+Once the default country is set, **Total Global** data, **Regional** OR **Local** data is scraped from https://bing.com/covid by Puppeteer and then saved to a Redis Database which is an in-memory data structure store, used as a database, cache and message broker. Redis is *wicked fast* hence the choice of database for this project.
 
 When End-users consume the API which has been set to the default country or region by you(API admin), a cached version of the data is served. Any subsequent visit to the API endpoint also result in a cached version of the data served.
 A Cron Job is scheduled to update the Redis Datastore every **hour**(*you can change the update frequency. check the getting started guide below*). Therefore End-users will be served an updated cached version of the data after every hour.
