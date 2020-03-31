@@ -2,6 +2,7 @@
 Regional Covid is a custom API that focuses on providing local or regional COVID-19 data based on data from https://bing.com/covid
 
 # How The API Works
+
 Once the default country is set, **Total Global** data, **Regional** OR **Local** data is scraped from https://bing.com/covid by Puppeteer and then saved to the Redis Database which is an in-memory data structure store, used as a database, cache and message broker. Redis is wicked fast hence the choice for database for this project.
 
 When End-users consume the API which has been set to the default country or region by you(API admin), a cached version of the data is served. Any subsequent visit to the API endpoint also result in a cached version of the data served.
@@ -34,6 +35,7 @@ A Cron Job is scheduled to update the Redis Datastore every **hour**(*you can ch
 4. Any other routes apart from the above results in a 404 error
 
 # Motive For This Project
+
 The motive for this project is due to the fact that most API's out there serving COVID-19 data, serve data that is too cluttered and not focused on Local OR Regional data. Recently infomation out there indicates that South Koreans are using apps to avoid someone who’s had Covid-19 nearby based on local data. 
 Local or Regional data will help other developers build data focused applications to help fight the current pandemic.
 It's also a way for me to improve upon my skills by learning something new during a self quarantine period. LOL.
@@ -58,9 +60,11 @@ To get started with the project on your computer locally, set the following Envi
 > **Note:** The Environmental Variable **REDIS_DB_PASSWORD** is only needed when you have access to a remote redis database server. If the value of **COVID_DATA_DB_KEYNAME** is not set, the value defaults to **covid19_data**. Also you can ignore **REDIS_DB_PORT**, **REDIS_DB_ENDPOINT**, and **REDIS_DB_PASSWORD** since it will default and connect your local installation of a Redis Server. Make sure to install redis locally to prevent any errors.
 
 ## 2. Start The Application
+
 Once you have a cloned version of this repo on your computer, you can run `npm install` to install dependencies and then `npm run start` to start the application.
 
 ## 3. Set The Default Region
+
 Once the application is running you can initialize and set the default country or region by visiting the URL:
  =====================================
 **127.0.0.1:[port]/covid/[your_country]**
