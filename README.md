@@ -56,10 +56,11 @@ To get started with the project on your computer locally, set the following Envi
 Once you have a cloned version of this repo on your computer, you can run `npm install` to install dependencies and then `npm run start` to start the application.
 
 ## 3. Set The Default Region
-Once the application is running you can initialize and set the default country or region by visiting the URL **127.0.0.1:[port]/covid/[your_country]**
+Once the application is running you can initialize and set the default country or region by visiting the URL:
+**127.0.0.1:[port]/covid/[your_country]**
 
 [port] is the port of the express server which is **5000** by default. You can change the value of the port in the **index.js** file. [your_country] is the full name of your country without any spaces.
-**e.g** *127.0.0.1:5000/covid/unitedstates*
+**e.g:** *127.0.0.1:5000/covid/unitedstates*
 
 > **Note:** You can set the default region or country **only!!! once**. Once you set the default country or region the data is cached in the Redis Database. Any subsequent visit to the same URL will result in a response of the cached version of the data. Also once the region or country is set trying to get data for a different country by visiting a different country will result in a redirect to the homepage. **You as an *API admin* or *Redis Server Admin* can only change the default country by deleting the data in the Redis Server and then visit the URL again with the new name of the country or region**. End users will only get a cached version of the data which is *wicked fast!!!*. 
 
