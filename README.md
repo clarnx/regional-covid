@@ -37,7 +37,7 @@ Anyone is welcomed to also add features or contribute to this project if you are
 
 # Getting started
 
-This project uses the dependencies **[Express](https://github.com/expressjs/express)**, **[Node Cron](https://github.com/node-cron/node-cron)**, **[Puppeteer](https://github.com/puppeteer/puppeteer)**, and **[Node Redis](https://github.com/NodeRedis/node-redis)**
+This project is a **[Node.js](https://nodejs.org/en/)** application that uses the dependencies **[Express](https://github.com/expressjs/express)**, **[Node Cron](https://github.com/node-cron/node-cron)**, **[Puppeteer](https://github.com/puppeteer/puppeteer)**, and **[Node Redis](https://github.com/NodeRedis/node-redis)**
 
 To get started with the project on your computer locally, set the following Environmental Variables on your computer.
 
@@ -50,10 +50,10 @@ To get started with the project on your computer locally, set the following Envi
 |REDIS_DB_ENDPOINT | 127.0.0.1 |
 |REDIS_DB_PASSWORD | rkkjg985e4jgw0t9jsgooiss  |
 
-> **Note:** The Environmental Variable **REDIS_DB_PASSWORD** is only needed when you have access to a remote redis database server. If the value of **COVID_DATA_DB_KEYNAME** is not set, the value defaults to *covid19_data*. Also you can ignore **REDIS_DB_PORT**, **REDIS_DB_ENDPOINT**, and **REDIS_DB_PASSWORD** since it will default and connect your local installation of a Redis Server. Make sure to install redis locally to prevent any errors.
+> **Note:** The Environmental Variable **REDIS_DB_PASSWORD** is only needed when you have access to a remote redis database server. If the value of **COVID_DATA_DB_KEYNAME** is not set, the value defaults to **covid19_data**. Also you can ignore **REDIS_DB_PORT**, **REDIS_DB_ENDPOINT**, and **REDIS_DB_PASSWORD** since it will default and connect your local installation of a Redis Server. Make sure to install redis locally to prevent any errors.
 
 ## 2. Start The Application
-Once you have a cloned version of this repo on your computer, you can run `npm install` to install dependencies and then `npm run start` to start the node application.
+Once you have a cloned version of this repo on your computer, you can run `npm install` to install dependencies and then `npm run start` to start the application.
 
 ## 3. Set The Default Region
 Once the application is running you can initialize and set the default country or region by visiting the URL **127.0.0.1:[port]/covid/[your_country]**
