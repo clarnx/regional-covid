@@ -50,7 +50,7 @@ To get started with the project on your computer locally, set the following Envi
 
 ## 1. Setting Environmental Variables
 
-|Environmental Variable| Example Value |
+|Environmental Variable| Sample Value |
 |--|--|
 |COVID_DATA_DB_KEYNAME | covid19_redis_database_key  |
 |REDIS_DB_PORT | 6379  |
