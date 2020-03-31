@@ -7,7 +7,9 @@ Once the default country is set, **Total Global** data, **Regional** OR **Local*
 
 When End-users consume the API which has been set to the default country or region by you(API admin), a cached version of the data is served. Any subsequent visit to the API endpoint also result in a cached version of the data served.
 A Cron Job is scheduled to update the Redis Datastore every **hour**(*you can change the update frequency. check the getting started guide below*). Therefore End-users will be served an updated cached version of the data after every hour.
-Thanks to [www.openode.io](www.openode.io) for hosting our backend
+
+Thanks to [www.openode.io](www.openode.io) for hosting on their backend
+
 <ins>**Sample JSON Data Served**</ins>
 
 ```json
