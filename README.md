@@ -63,4 +63,5 @@ Once the application is running you can initialize and set the default country o
 
 > **Note:** You can set the default region or country **only!!! once**. Once you set the default country or region the data is cached in the Redis Database. Any subsequent visit to the same URL will result in a response of the cached version of the data. Also once the region or country is set trying to get data for a different country by visiting a different country will result in a redirect to the homepage. **You as an *API admin* or *Redis Server Admin* can only change the default country by deleting the data in the Redis Server and then visit the URL again with the new name of the country or region**. End users will only get a cached version of the data which is *wicked fast!!!*. 
 
-Data is scheduled to be updated every hour by the help of the node.js package **node-cron**.
+Data is scheduled to be updated every hour by the help of the node.js package **node-cron**. 
+> **Note:** You can change the update frequency value in **/utils/init.js** file. 
