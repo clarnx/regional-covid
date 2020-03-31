@@ -30,7 +30,7 @@ A Cron Job is scheduled to update the Redis Datastore every **hour**(*you can ch
 ```
 <ins>**API Routes**</ins>
 1. `/`
-2. `/covid/[country]` [country] is the name of your country/region e.g */covid/australia*
+2. `/covid/[country]` [country] is the name of your country or region e.g */covid/australia*
 3. `/covid` redirects to `/`
 4. Any other routes apart from the above results in a 404 error
 
