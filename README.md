@@ -30,7 +30,7 @@ A Cron Job is scheduled to update the Redis Datastore every **hour**(*you can ch
 ```
 <ins>**API Routes**</ins>
 1. `/`
-2. `/covid/[country]`
+2. `/covid/[country]` [country] is the name of your country/region e.g */covid/australia*
 3. `/covid` redirects to `/`
 4. Any other routes apart from the above results in a 404 error
 
@@ -66,11 +66,9 @@ Once you have a cloned version of this repo on your computer, you can run `npm i
 ## 3. Set The Default Region
 
 Once the application is running you can initialize and set the default country or region by visiting the URL:
-
   ------------------------------------
 **127.0.0.1:[port]/covid/[your_country]**
   ------------------------------------
-
 [port] is the port of the express server which is **5000** by default. You can change the value of the port in the **index.js** file. [your_country] is the full name of your country without any spaces.
 **e.g:** *127.0.0.1:5000/covid/unitedstates*
 
