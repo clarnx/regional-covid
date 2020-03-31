@@ -9,7 +9,7 @@ A Cron Job is scheduled to update the Redis Datastore every **hour**(*you can ch
 
 <ins>**Sample JSON Data Served**</ins>
 
-`
+```json
 {
    "globalTotalConfirmedCases":"803,313",
    "globalActiveCases":"601,362",
@@ -26,7 +26,7 @@ A Cron Job is scheduled to update the Redis Datastore every **hour**(*you can ch
    ],
    "dataLastUpdated":"3/31/2020, 4:36:41 PM"
 }
-`
+```
 
 # Motive For This Project
 The motive for this project is due to the fact that most API's out there serving COVID-19 data, serve data that is too cluttered and not focused on Local OR Regional data. Recently infomation out there indicates that South Koreans are using apps to avoid someone who’s had Covid-19 nearby based on local data. 
