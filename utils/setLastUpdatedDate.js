@@ -5,6 +5,8 @@ async function setLastUpdatedDate(page, covid19Data) {
 
   await dataInformationIcon.click();
 
+  await page.waitForSelector(".infoCallout p br");
+
   const dataInformationIconInnerText = await page.$eval(
     ".infoCallout p br",
     el => el.nextSibling.textContent

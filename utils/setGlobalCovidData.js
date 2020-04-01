@@ -1,11 +1,11 @@
 async function setGlobalCovidData(page, covid19Data) {
   covid19Data.globalTotalConfirmedCases = await page.$eval(
-    ".country.tab .confirmed",
+    ".country.tab .infoTile .confirmed",
     el => el.textContent
   );
 
   const GlobalSectionElementsBasedOnDescription = await page.$$(
-    ".country.tab .description"
+    ".country.tab .infoTile .infoTileData .description"
   );
 
   for (const el of GlobalSectionElementsBasedOnDescription) {

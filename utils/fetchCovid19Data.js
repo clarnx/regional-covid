@@ -16,14 +16,17 @@ async function fetchCovid19Data(country, response) {
 
   return (async () => {
     const countryInputSearchValue = country;
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({headless: false});
     const page = await browser.newPage();
     await page.goto("https://bing.com/covid");
+    await page.waitForNavigation();
 
     try {
       const searchInput = await page.$("input.area");
       await searchInput.click();
       await searchInput.type(countryInputSearchValue);
+
+      await page.waitForSelector(".suggestion div.suggArea");
 
       const firstSuggestedDiv = await page.$(".suggestion div.suggArea");
 
@@ -40,6 +43,8 @@ async function fetchCovid19Data(country, response) {
       ) {
         await firstSuggestedDiv.click();
       }
+
+      await page.waitForSelector(".overview .infoTile");
 
       await setLocalCovidData(countryString, page, covid19Data);
 

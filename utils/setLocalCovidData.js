@@ -24,12 +24,12 @@ class Covid19LocalData {
 
 async function setLocalCovidData(countryString, page, covid19Data) {
   localTotalConfirmedCases = await page.$eval(
-    ".region.tab .confirmed",
+    ".overview .infoTile .confirmed",
     el => el.textContent
   );
 
   const LocalSectionElementsBasedOnDescription = await page.$$(
-    ".region.tab .description"
+    ".overview .infoTile .infoTileData .description"
   );
 
   for (const el of LocalSectionElementsBasedOnDescription) {
