@@ -18,7 +18,7 @@ const init = (req, res) => {
       res.json(covid19Data);
     } catch (error) {
       console.log(error.message);
-      response.status(500).send("Sorry server could  not process request.");
+      res.status(500).send("Sorry server could  not process request.");
     }
   })();
 };
