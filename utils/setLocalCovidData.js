@@ -37,15 +37,15 @@ async function setLocalCovidData(countryString, page, covid19Data) {
 
     switch (innerText) {
       case "Active cases":
-        localActiveCases = await el.evaluate(e => e.nextSibling.innerText);
+        localActiveCases = await el.evaluate(e => e.nextSibling.childNodes["0"].nodeValue);
         break;
 
       case "Recovered cases":
-        localRecoveredCases = await el.evaluate(e => e.nextSibling.innerText);
+        localRecoveredCases = await el.evaluate(e => e.nextSibling.childNodes["0"].nodeValue);
         break;
 
       case "Fatal cases":
-        localFatalCases = await el.evaluate(e => e.nextSibling.innerText);
+        localFatalCases = await el.evaluate(e => e.nextSibling.childNodes["0"].nodeValue);
         break;
     }
   }

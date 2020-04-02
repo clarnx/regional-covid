@@ -4,6 +4,9 @@ const setLocalCovidData = require("./setLocalCovidData");
 const setGlobalCovidData = require("./setGlobalCovidData");
 const setLastUpdatedDate = require("./setLastUpdatedDate");
 
+//Comment out code below if you are lauching browser locally.
+const BROWSER_ENDPOINT = process.env.BROWSER_ENDPOINT;
+
 async function fetchCovid19Data(country, response) {
   const covid19Data = {
     globalTotalConfirmedCases: null,
@@ -16,7 +19,14 @@ async function fetchCovid19Data(country, response) {
 
   return (async () => {
     const countryInputSearchValue = country;
-    const browser = await puppeteer.launch();
+    //Uncomment code below for launching browser locally
+    // const browser = await puppeteer.launch();
+
+    //Code below for launching remote browser endpoint. Comment out code below if you want to lauch browser locally.
+    const browser = await puppeteer.connect({
+      browserWSEndpoint: BROWSER_ENDPOINT
+    });
+
     const page = await browser.newPage();
     await page.goto("https://bing.com/covid");
     await page.waitForNavigation();
